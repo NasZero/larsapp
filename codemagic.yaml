@@ -1,9 +1,11 @@
-publishing:
-  firebase:
-    firebase_token: $FIREBASE_TOKEN
-    android:
-      app_id: larsapp-8d316
-      groups:
-        - androidTesters
-        - ...
-      artifact_type: "apk"
+workflows:
+  my-workflow:
+    publishing:
+      firebase:
+        firebase_token: $FIREBASE_TOKEN
+        android:
+          app_id: x:xxxxxxxxxxxx:android:xxxxxxxxxxxxxxxxxxxxxx
+          groups:
+            - androidTesters
+            - ...
+          artifact_type: "apk"
