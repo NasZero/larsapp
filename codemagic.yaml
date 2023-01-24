@@ -6,6 +6,8 @@ workflows:
       flutter: default
       xcode: latest
       cocoapods: default
+      groups:
+        - firebase_credentials
     scripts:
       - |
         # set up debug keystore
@@ -31,9 +33,6 @@ workflows:
       - "*.snap"
       - build/windows/**/*.msix
       - flutter_drive.log
-    environment:
-      groups:
-        - firebase_credentials
     publishing:
       email:
         recipients:
