@@ -31,12 +31,15 @@ workflows:
       - "*.snap"
       - build/windows/**/*.msix
       - flutter_drive.log
+    environment:
+      groups:
+        - firebase_credentials
     publishing:
       email:
         recipients:
           - larsvdk@icloud.com
       firebase:
-        firebase_token: Encrypted(Z0FBQUFBQmp6NlpoR0dsOVBYdng5VmhJTWJsSXFwaV9IQ0VaeW9jWENCYW16Z1NFNjF1QWg0VmJkU2FVcEQxcGs1Wm5EZ2NCS25yaVROcGRXWEY5NEFSal9rTjVfX2JmU1ZoZHhzY25xeDdWSVh4LUJNb1gtT0ZHRHVBcW9POENiM3MtWDJ1VXBWTEREc21vcUNQZlhSMmk2SFppOWNDTnI0ZTdZcUx3a1pXamNHUndoQnlpTUQ3U3dOUWZKMDlOLVdOaXFCWllEYVZNampCNzdReWIyRldfWW9YSmxyUWh0dz09)
+        firebase_token: $FIREBASE_TOKEN
         android:
           app_id: 1:381890950140:android:8d8d2fa040e306b3abf879
           groups:
