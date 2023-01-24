@@ -1,0 +1,4 @@
+Release notes for Counter app
+
+- Counter app
+- Changed build version

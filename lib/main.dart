@@ -193,7 +193,7 @@ class _MyAppState extends State<MyApp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Made by Lars van de Keuken\nmade with ♥',
+                        'Made by Lars van de Keuken',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.montserrat(
                           textStyle: const TextStyle(
