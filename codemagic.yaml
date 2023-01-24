@@ -1,9 +1,5 @@
 workflows:
   my-workflow:
-    scripts:
-      - name: Publish to Firebase Hosting
-        script: |
-          firebase deploy --token "$FIREBASE_TOKEN"
     environment:
       groups:
         - firebase_credentials
@@ -11,7 +7,7 @@ workflows:
       firebase:
         firebase_token: $FIREBASE_TOKEN
         android:
-          app_id: larsapp-8d316
+          app_id: 1:381890950140:android:8d8d2fa040e306b3abf879
           groups:
             - androidTesters
             - ...
