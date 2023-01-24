@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "381890950140",
+    "project_id": "larsapp-8d316",
+    "storage_bucket": "larsapp-8d316.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:381890950140:android:8d8d2fa040e306b3abf879",
+        "android_client_info": {
+          "package_name": "io.codemagic.larsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "381890950140-j78geurpe5sn60dqahk4cprdnm0n3n39.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaOr-JQWsRCcfH6G2_KQpthGr9sB7F1JU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "381890950140-j78geurpe5sn60dqahk4cprdnm0n3n39.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
