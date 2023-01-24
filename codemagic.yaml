@@ -1,14 +1,44 @@
 workflows:
-  my-workflow:
+  default-workflow:
+    name: Default Workflow
+    max_build_duration: 60
     environment:
-      groups:
-        - firebase_credentials
+      flutter: default
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - |
+        # set up debug keystore
+        rm -f ~/.android/debug.keystore
+        keytool -genkeypair \
+          -alias androiddebugkey \
+          -keypass android \
+          -keystore ~/.android/debug.keystore \
+          -storepass android \
+          -dname 'CN=Android Debug,O=Android,C=US' \
+          -keyalg 'RSA' \
+          -keysize 2048 \
+          -validity 10000
+      - |
+        # set up local properties
+        echo "flutter.sdk=$HOME/programs/flutter" > "$FCI_BUILD_DIR/android/local.properties"
+      - flutter packages pub get
+      - flutter build appbundle --debug
+    artifacts:
+      - build/**/outputs/apk/**/*.apk
+      - build/**/outputs/bundle/**/*.aab
+      - build/**/outputs/**/mapping.txt
+      - "*.snap"
+      - build/windows/**/*.msix
+      - flutter_drive.log
     publishing:
+      email:
+        recipients:
+          - larsvdk@icloud.com
       firebase:
-        firebase_token: $FIREBASE_TOKEN
+        firebase_token: Encrypted(Z0FBQUFBQmp6NlpoR0dsOVBYdng5VmhJTWJsSXFwaV9IQ0VaeW9jWENCYW16Z1NFNjF1QWg0VmJkU2FVcEQxcGs1Wm5EZ2NCS25yaVROcGRXWEY5NEFSal9rTjVfX2JmU1ZoZHhzY25xeDdWSVh4LUJNb1gtT0ZHRHVBcW9POENiM3MtWDJ1VXBWTEREc21vcUNQZlhSMmk2SFppOWNDTnI0ZTdZcUx3a1pXamNHUndoQnlpTUQ3U3dOUWZKMDlOLVdOaXFCWllEYVZNampCNzdReWIyRldfWW9YSmxyUWh0dz09)
         android:
           app_id: 1:381890950140:android:8d8d2fa040e306b3abf879
           groups:
             - androidTesters
-            - ...
-          artifact_type: "apk"
+          artifact_type: apk
