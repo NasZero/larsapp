@@ -1,5 +1,9 @@
 workflows:
   my-workflow:
+    scripts:
+      - name: Publish to Firebase Hosting
+        script: |
+          firebase deploy --token "$FIREBASE_TOKEN"
     environment:
       groups:
         - firebase_credentials
